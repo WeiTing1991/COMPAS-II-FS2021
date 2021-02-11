@@ -69,7 +69,7 @@ First time using `conda`? Make sure you run this at least once:
 
     (base) conda config --add channels conda-forge
 
-Create a new conda environment:
+Create a new conda environment in one of two ways.  Manually:
 
 **Windows**
 
@@ -81,6 +81,10 @@ Create a new conda environment:
     (base) conda create -n compas-fs2021 python=3.8 compas_fab=0.16 python.app --yes
     (base) conda activate compas-fs2021
     
+Or, after cloning this repository:
+
+    (base) conda env create -f path/to/COMPAS-II-FS2021/environment.yml
+
 ### Verify installation
 
     (compas-fs2021) pip show compas_fab
