@@ -84,6 +84,7 @@ Create a new conda environment in one of two ways.  Manually:
 Or, after cloning this repository:
 
     (base) conda env create -f path/to/COMPAS-II-FS2021/environment.yml
+    (base) conda activate compas-fs2021
 
 ### Verify installation
 
