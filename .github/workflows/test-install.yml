@@ -1,0 +1,45 @@
+name: test-install
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  test-install:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2.0.0
+        with:
+          miniconda-version: "latest"
+          activate-environment: compas-fs2021
+          channels: conda-forge
+          python-version: 3.8
+
+      - name: install
+        run: |
+          conda install compas=1.* compas_fab>=0.16 igl>=2.2.1 compas_cgal>=0.1.1 --yes
+          pip install compas_slicer
+
+      - name: install python.app (mac)
+        if: matrix.os == 'macos-latest'
+        run: |
+          conda install python.app --yes
+
+      - name: Verify imports
+        run: |
+          python -c "import compas; print(compas.__version__)"
+          python -c "import compas_fab; print(compas_fab.__version__)"
+          python -c "import compas_slicer; print(compas_slicer.__version__)"
