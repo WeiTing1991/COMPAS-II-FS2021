@@ -3,14 +3,12 @@ channels:
     - conda-forge
 
 dependencies:
-   - python=3.7
+   - python=3.8
    - pip
-   - compas>=1.0
+   - compas=1.*
    - compas_fab>=0.16
    - igl>=2.2.1
    - compas_cgal>=0.1.1
-   # - compas_slicer>=0.1.0
-   # - compas_rrc>=0.1.0
    - pip:
-     # - compas_rrc @ git+https://github.org/???/compas_rrc.git#egg=compas_rrc
-     - compas_slicer @ git+https://github.com/compas-dev/compas_slicer.git#egg=compas_slicer
+     # - compas_rrc @ git+https://github.com/compas-rrc/compas_rrc.git#egg=compas_rrc
+     - compas_slicer

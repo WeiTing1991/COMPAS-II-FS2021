@@ -9,16 +9,16 @@ This PhD-level course introduces digital fabrication methods and tools building 
 | Lecture | Date   | Session content                                                                                                                                                                                                                                                                                                                                                                                                                          | Session leads      |
 |---------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
 | 01      | 24.02. | **Introduction**<br>Introduction to digital fabrication methods and the COMPAS ecosystem for digital fabrication: core, fab, rrc, slicer.<br>Brief overview of core data structures (network, mesh).<br>Remote procedure calls.                                                                                                                                                                                                          | All                |
-| 02      | 03.03. | **Robotic fundamentals**<br>Introduction to robotics: anatomy of an industrial robot, coordinate systems, transformations.<br>Brief intro to kinematic functions and path planning.<br>Assignment: [TBD]                                                                                                                                                                                                                                 | GKR (RR, BL, GC)   |
-| 03      | 10.03. | **Robot models**<br>Models from URDF, programmatic models.<br>Robot model visualization in Rhino / Grasshopper.<br>Forward kinematics of open chain manipulators.<br>Assignment: model your own robot.                                                                                                                                                                                                                                                              | GKR (RR, BL, GC)   |
-| 04      | 17.03. | **ROS & MoveIt in the design environment**<br>Introduction to ROS, topics, services, actions. Basic interprocess communication via ROS nodes. Reproducible ROS environments with Docker.<br>Robot planning: forward and inverse kinematic  functions, analytical (closed-form) and numerical solvers. MoveIt integration from the parametric design environment.<br>[PyBullet integration (?)]<br>Assignment: [TBD, based on IK solving] | GKR (RR, BL, GC)   |
-| 05      | 31.03. | **Path planning**<br>Cartesian and kinematic path planning using MoveIt.<br>Planning scene operations. End effectors and discrete build elements.<br>Assignment: [TBD]                                                                                                                                                                                                                                                                   | GKR (RR, BL, GC)   |
-| 06      | 14.04. | **Assembly of discrete elements I**<br>Brief introduction to directed acyclic graphs. Modelling assembly processes as DAGs. Planning pick-and-place operations.<br>Assignment: [TBD, Ondulated brick wall?]                                                                                                                                                                                                                              | GKR (RR, BL, GC)   |
+| 02      | 03.03. | **Robotic fundamentals**<br>Introduction to robotics: anatomy of an industrial robot, coordinate systems, transformations.<br>Brief intro to kinematic functions and path planning.                                                                                                                                                                                                                                                      | GKR (RR, BL, GC)   |
+| 03      | 10.03. | **Robot models**<br>Models from URDF, programmatic models.<br>Robot model visualization in Rhino / Grasshopper.<br>Forward kinematics of open chain manipulators.<br>Assignment: model your own robot.                                                                                                                                                                                                                                   | GKR (RR, BL, GC)   |
+| 04      | 17.03. | **ROS & MoveIt in the design environment**<br>Introduction to ROS, topics, services, actions. Basic interprocess communication via ROS nodes. Reproducible ROS environments with Docker.<br>Robot planning: forward and inverse kinematic  functions, analytical (closed-form) and numerical solvers. MoveIt integration from the parametric design environment.                                                                         | GKR (RR, BL, GC)   |
+| 05      | 31.03. | **Path planning**<br>Cartesian and kinematic path planning using MoveIt.<br>Planning scene operations. End effectors and discrete build elements.                                                                                                                                                                                                                                                                                        | GKR (RR, BL, GC)   |
+| 06      | 14.04. | **Assembly of discrete elements I**<br>Brief introduction to directed acyclic graphs. Modelling assembly processes as DAGs. Planning pick-and-place operations.                                                                                                                                                                                                                                                                          | GKR (RR, BL, GC)   |
 | 07      | 21.04. | **Assembly of discrete elements II**<br>Applied exercise from design to planning fabrication for an assembly of discrete elements and preparation for control exercise.                                                                                                                                                                                                                                                                  | GKR (RR, BL, GC)   |
-| 08      | 28.04. | **Robot control with COMPAS RRC**<br>Online non-real time control of industrial robots. Components of an RRC deployment. Communication primitives (blocking, futures, cyclic). Instructions. Multi controller & location coordination.<br>Assignment: [TBD, Pick and place exercise]                                                                                                                                                     | GKR (RR, BL, GC)   |
+| 08      | 28.04. | **Robot control with COMPAS RRC**<br>Online non-real time control of industrial robots. Components of an RRC deployment. Communication primitives (blocking, futures, cyclic). Instructions. Multi controller & location coordination.                                                                                                                                                                                                   | GKR (RR, BL, GC)   |
 | 09      | 05.05. | **Assembly of discrete elements III**<br>Continued applied exercise from planning data to robot control for an assembly of discrete elements.                                                                                                                                                                                                                                                                                            | GKR (RR, BL, GC)   |
-| 10      | 12.05. | **COMPAS SLICER: Basics**<br>Introduction to COMPAS SLICER (presentation).<br>Planar slicing of simple geometry<br>Simulating and planning of robotic motion with COMPAS RRC and COMPAS SLICER<br>G-code generation?                                                                                                                                                                                                                     | DBT & GKR (IM, JB) |
-| 11      | 19.05. | **COMPAS SLICER: Advanced**<br>Introduction to non-planar slicing.<br>Non-planar slicing of a geometry.<br>Simulation and planning of robotic motion with COMPAS RRC.<br>Assignment: [TBD, ideas: generation of planar g-code for a desktop 3D printer, simulation of robotic motion (planar or non-planar) using COMPAS RRC]                                                                                                            | DBT & GKR (IM, JB) |
+| 10      | 12.05. | **COMPAS SLICER: Basics**<br>Introduction to COMPAS SLICER (presentation).<br>Planar slicing of simple geometry<br>Simulating and planning of robotic motion with COMPAS RRC and COMPAS SLICER<br>G-code generation                                                                                                                                                                                                                      | DBT & GKR (IM, JB) |
+| 11      | 19.05. | **COMPAS SLICER: Advanced**<br>Introduction to non-planar slicing.<br>Non-planar slicing of a geometry.<br>Simulation and planning of robotic motion with COMPAS RRC.                                                                                                                                                                                                                                                                    | DBT & GKR (IM, JB) |
 | 12      | 26.05. | **Advancing computational research**<br>Research reproducibility and Upstreaming research output.                                                                                                                                                                                                                                                                                                                                        | GKR (RR, BL, GC)   |
 | 13      | 02.06. | Closing                                                                                                                                                                                                                                                                                                                                                                                                                                  | All                |
 
@@ -26,8 +26,7 @@ This PhD-level course introduces digital fabrication methods and tools building 
 
 Links:
 [Course info on ETHZ Catalog](http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021S&ansicht=ALLE&lerneinheitId=153368&lang=en) |
-[Slack workspace](https://join.slack.com/t/compasii/shared_invite/zt-l9ekxyra-WdcXdBbALYtleTO3P7j1bA) |
-Github Classroom
+[Slack workspace](https://join.slack.com/t/compasii/shared_invite/zt-mi3kyo2f-aMdyGCKubeTfKnKPdczpcQ)
 
 ### Objectives
 
@@ -56,12 +55,10 @@ Lectures, tutorials and project-based exercises will focus on:
 * Minimum OS: Windows 10 Pro or Mac OS Sierra 10.12
 * [Anaconda 3](https://www.anaconda.com/distribution/)
 * [Docker Desktop](https://www.docker.com/products/docker-desktop) Docker Toolbox would also work but it's a bit more annoying. After installation on Windows, it is required to enable "Virtualization" on the BIOS of the computer.
-* [Rhino 6 & Grasshopper](https://www.rhino3d.com/download)
+* [Rhino 6/7 & Grasshopper](https://www.rhino3d.com/download)
 * [Visual Studio Code](https://code.visualstudio.com/): Any python editor works, but we recommend VS Code + extensions [as mentioned in our docs](https://gramaziokohler.github.io/compas_fab/latest/getting_started.html#working-in-visual-studio-code-1)
 
 ## Installation
-
-> **TODO**: Add compas_slicer and compas_rrc to installation
 
 We use `conda` to make sure we have clean, isolated environment for dependencies.
 
@@ -69,22 +66,29 @@ First time using `conda`? Make sure you run this at least once:
 
     (base) conda config --add channels conda-forge
 
-Create a new conda environment in one of two ways.  Manually:
+Clone this repository and create a new conda environment:
 
-**Windows**
-
-    (base) conda create -n compas-fs2021 python=3.8 compas_fab=0.16 --yes
+    (base) cd path/to/COMPAS-II-FS2021
+    (base) conda env create -f environment.yml
     (base) conda activate compas-fs2021
+
+<details><summary>Alternatively, create environment manually</summary>
+<p>
+
+The conda environment can also be manually created:
+
+    (base) conda create -n compas-fs2021 python=3.8 compas_fab>=0.16 --yes
+    (base) conda activate compas-fs2021
+
+</p>
+</details>
+<br/>
 
 **Mac**
 
-    (base) conda create -n compas-fs2021 python=3.8 compas_fab=0.16 python.app --yes
-    (base) conda activate compas-fs2021
-    
-Or, after cloning this repository:
+Also install `python.app` after activating the environment:
 
-    (base) conda env create -f path/to/COMPAS-II-FS2021/environment.yml
-    (base) conda activate compas-fs2021
+    (compas-fs2021) conda install python.app
 
 ### Verify installation
 
@@ -93,10 +97,13 @@ Or, after cloning this repository:
     Version: 0.16.0
     Summary: Robotic fabrication package for the COMPAS Framework
     ...
-
+    (compas-fs2021) pip show compas_slicer
+    Name: compas-slicer
+    Version: 0.1.3
+    Summary: Slicing package for FDM 3D Printing with COMPAS
 
 ### Install on Rhino
 
     (compas-fs2021) python -m compas_rhino.install
 
-NOTE: This installs to Rhino 6.0, use `-v 5.0` if needed.
+NOTE: This installs to Rhino 6.0, use `-v 7.0` if needed.
