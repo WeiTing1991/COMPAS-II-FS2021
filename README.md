@@ -82,7 +82,6 @@ The conda environment can also be manually created:
 
 </p>
 </details>
-<br/>
 
 **Mac**
 
