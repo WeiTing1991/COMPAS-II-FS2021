@@ -43,3 +43,4 @@ jobs:
           python -c "import compas; print(compas.__version__)"
           python -c "import compas_fab; print(compas_fab.__version__)"
           python -c "import compas_slicer; print(compas_slicer.__version__)"
+          python -m compas

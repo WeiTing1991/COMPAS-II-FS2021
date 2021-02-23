@@ -91,15 +91,13 @@ Also install `python.app` after activating the environment:
 
 ### Verify installation
 
-    (compas-fs2021) pip show compas_fab
-    Name: compas-fab
-    Version: 0.16.0
-    Summary: Robotic fabrication package for the COMPAS Framework
-    ...
-    (compas-fs2021) pip show compas_slicer
-    Name: compas-slicer
-    Version: 0.1.3
-    Summary: Slicing package for FDM 3D Printing with COMPAS
+    (compas-fs2021) python -m compas
+
+    Yay! COMPAS is installed correctly!
+
+    COMPAS: 1.1.0
+    Python: 3.8.8 | packaged by conda-forge | (default, Feb 20 2021, 15:50:08) [MSC v.1916 64 bit (AMD64)]
+    Extensions: ['compas-cgal', 'compas-fab', 'compas-slicer']
 
 ### Install on Rhino
 
