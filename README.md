@@ -106,3 +106,9 @@ Also install `python.app` after activating the environment:
     (compas-fs2021) python -m compas_rhino.install
 
 NOTE: This installs to Rhino 6.0, use `-v 7.0` if needed.
+
+### Update installation
+
+To update your environment:
+
+    (compas-fs2021) conda env update -f environment.yml
