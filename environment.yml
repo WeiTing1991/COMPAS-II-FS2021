@@ -7,7 +7,7 @@ dependencies:
    - pip
    - git
    - compas=1.*
-   - compas_fab>=0.16
+   - compas_fab>=0.17
    - igl>=2.2.1
    - compas_cgal>=0.1.1
    - pip:
