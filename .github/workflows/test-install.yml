@@ -53,4 +53,4 @@ jobs:
           python lecture_01/04_primitives_equivalence.py
           python lecture_01/05_primitives_transforms.py
           python lecture_01/06_shapes.py
-          python lecture_01/12_mesh_from_scratch.py
+          python lecture_01/13_mesh_from_scratch.py
