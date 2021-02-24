@@ -44,3 +44,13 @@ jobs:
           python -c "import compas_fab; print(compas_fab.__version__)"
           python -c "import compas_slicer; print(compas_slicer.__version__)"
           python -m compas
+
+      - name: Test code samples
+        run: |
+          python lecture_01/01_primitives.py
+          python lecture_01/02_primitives_operations.py
+          python lecture_01/03_primitives_constructors.py
+          python lecture_01/04_primitives_equivalence.py
+          python lecture_01/05_primitives_transforms.py
+          python lecture_01/06_shapes.py
+          python lecture_01/12_mesh_from_scratch.py
