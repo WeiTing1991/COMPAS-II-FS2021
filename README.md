@@ -26,7 +26,8 @@ This PhD-level course introduces digital fabrication methods and tools building 
 
 Links:
 [Course info on ETHZ Catalog](http://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2021S&ansicht=ALLE&lerneinheitId=153368&lang=en) |
-[Slack workspace](https://join.slack.com/t/compasii/shared_invite/zt-mi3kyo2f-aMdyGCKubeTfKnKPdczpcQ)
+[Slack workspace](https://join.slack.com/t/compasii/shared_invite/zt-mi3kyo2f-aMdyGCKubeTfKnKPdczpcQ) |
+[COMPAS docs](https://compas.dev)
 
 ### Objectives
 
@@ -102,8 +103,7 @@ Also install `python.app` after activating the environment:
 ### Install on Rhino
 
     (compas-fs2021) python -m compas_rhino.install
-
-NOTE: This installs to Rhino 6.0, use `-v 7.0` if needed.
+    (compas-fs2021) python -m compas_rhino.install -v 7.0
 
 ### Update installation
 
