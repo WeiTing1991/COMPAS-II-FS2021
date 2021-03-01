@@ -55,3 +55,24 @@ jobs:
           python lecture_01/06_shapes.py
           python lecture_01/13_mesh_from_scratch.py
           python lecture_01/24_mesh_booleans.py
+          python lecture_01/30_network_from_scratch.py
+          python lecture_01/36_network_serialization.py
+          python lecture_01/38_network_serialization_complex_type.py
+          python lecture_02/01_several_ways_to_construct_frame.py
+          python lecture_02/02_point_in_frame.py
+          python lecture_02/03_frame_in_frame.py
+          python lecture_02/04_box_from_the_world_to_local.py
+          python lecture_02/06_examples_transformation.py
+          python lecture_02/07_inverse_transformation.py
+          python lecture_02/08_premultiply_transformations.py
+          python lecture_02/09_pre_vs_post_multiplication.py
+          python lecture_02/10_decompose_transformation.py
+          python lecture_02/11_transform_point_and_vector.py
+          python lecture_02/12_transform_multiple.py
+          python lecture_02/13_change_basis_vs_between_frames.py
+          python lecture_02/14_box_from_the_world_to_local.py
+          python lecture_02/16_several_ways_to_construct_rotation.py
+          python lecture_02/17_robot_tcp_orientations.py
+          python lecture_02/18_euler_angles.py
+          python lecture_02/19_axis_angle.py
+          python lecture_02/20_quaternion.py
