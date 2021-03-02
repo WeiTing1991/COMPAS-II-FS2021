@@ -15,7 +15,7 @@ box = Box(frame, width, length, height)
 # Frame F representing a coordinate system
 F = Frame([2, 2, 2], [0.978, 0.010, -0.210], [0.090, 0.882, 0.463])
 
-# Get transformation between frames
+# Get transformation between frame F and world
 # T = ...
 # Apply transformation on box.
 # box_transformed = ...
