@@ -6,7 +6,7 @@ Remote procedure calls.
 
 👉 [Slides](lecture_01.pdf)
 
-## Exammples
+## Examples
 
 * Primitives
   * [Primitives](01_primitives.py)
