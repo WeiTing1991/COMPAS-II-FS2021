@@ -5,6 +5,7 @@ Introduction to robotics: 1) anatomy of an industrial robot, 2) coordinate syste
 Brief intro to kinematic functions and path planning.
 
 👉 [Slides](lecture_02.pdf)
+📜 [Assignment 01](assignment_01/README.md)
 
 ## Examples
 
