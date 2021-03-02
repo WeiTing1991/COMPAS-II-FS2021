@@ -69,8 +69,8 @@ jobs:
           python lecture_02/10_decompose_transformation.py
           python lecture_02/11_transform_point_and_vector.py
           python lecture_02/12_transform_multiple.py
-          python lecture_02/13_change_basis_vs_between_frames.py
-          python lecture_02/14_box_from_the_world_to_local.py
+          python lecture_02/13_change_basis_transformation.py
+          python lecture_02/14_transformation_between_frames.py
           python lecture_02/16_several_ways_to_construct_rotation.py
           python lecture_02/17_robot_tcp_orientations.py
           python lecture_02/18_euler_angles.py
