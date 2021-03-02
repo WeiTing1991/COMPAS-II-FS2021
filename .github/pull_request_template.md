@@ -1,5 +1,5 @@
 <!-- You are about to submit an assignment! -->
-<!-- For a title, it's enough to say indicate the assignment number, eg, `Assignment 01` -->
+<!-- For a title, it's enough to indicate the assignment number, eg, `Assignment 01` -->
 
 ### Checklist
 
