@@ -15,9 +15,10 @@ box = Box(frame, width, length, height)
 # Frame F representing a coordinate system
 F = Frame([2, 2, 2], [0.978, 0.010, -0.210], [0.090, 0.882, 0.463])
 
-# Get transformation between frames and apply transformation on box.
-T = Transformation.from_frame_to_frame(Frame.worldXY(), F)
-box_transformed = box.transformed(T)
+# Get transformation between frames
+# T = ...
+# Apply transformation on box.
+# box_transformed = ...
 print("Box frame transformed", box_transformed.frame)
 
 # create artists
