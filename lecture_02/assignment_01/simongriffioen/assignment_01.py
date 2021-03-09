@@ -2,13 +2,17 @@
 """
 from compas.geometry import Box
 from compas.geometry import Frame, Plane
-from compas.geometry import Projection
+from compas.geometry import Projection, Translation
 from compas_rhino.artists import BoxArtist
 from compas_rhino.artists import MeshArtist
 from compas.datastructures import Mesh
 
 # Define a Frame, which is not in the origin and a bit tilted to the world frame
 frame = Frame.from_euler_angles([0.5, 1., 0.2])
+translation_vector = [5, 3, 1]
+T = Translation.from_vector(translation_vector)
+# move frame from origin
+frame.transform(T)
 
 # Create a Box with that frame
 width, length, height = 1, 1, 1
