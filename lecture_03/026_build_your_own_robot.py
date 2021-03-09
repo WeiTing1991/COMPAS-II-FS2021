@@ -41,7 +41,8 @@ robot.add_joint("joint2", Joint.CONTINUOUS, link1, link2, origin, axis)
 artist = RobotModelArtist(robot)
 
 # Exercise: Update the robot's configuration
-artist.update...
+configuration = Configuration.from_revolute_values([0.1, 0.2])
+artist.update(configuration)
 
 artist.draw_visual()
 artist.redraw()
