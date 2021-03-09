@@ -9,6 +9,7 @@ from compas.robots import Joint
 from compas.robots import RobotModel
 from compas_rhino.artists import RobotModelArtist
 from compas_fab.robots import Configuration
+from compas_fab.robots import Robot
 
 # create cylinder in yz plane
 radius, length = 0.3, 5
@@ -16,33 +17,34 @@ cylinder = Cylinder(Circle(Plane([0, 0, 0], [1, 0, 0]), radius), length)
 cylinder.transform(Translation.from_vector([length / 2., 0, 0]))
 
 # create robot
-robot = RobotModel("robot", links=[], joints=[])
+model = RobotModel("robot", links=[], joints=[])
 
 # add first link to robot
-link0 = robot.add_link("world")
+link0 = model.add_link("world")
 
 # add second link to robot
 mesh = Mesh.from_shape(cylinder)
-link1 = robot.add_link("link1", visual_mesh=mesh, visual_color=(0.2, 0.5, 0.6))
+link1 = model.add_link("link1", visual_mesh=mesh, visual_color=(0.2, 0.5, 0.6))
 
 # add the joint between the links
 axis = (0, 0, 1)
 origin = Frame.worldXY()
-robot.add_joint("joint1", Joint.CONTINUOUS, link0, link1, origin, axis)
+model.add_joint("joint1", Joint.CONTINUOUS, link0, link1, origin, axis)
 
 # add another link
-mesh = Mesh.from_shape(cylinder) # create a copy!
-link2 = robot.add_link("link2", visual_mesh=mesh, visual_color=(0.5, 0.6, 0.2))
+mesh = Mesh.from_shape(cylinder)  # create a copy!
+link2 = model.add_link("link2", visual_mesh=mesh, visual_color=(0.5, 0.6, 0.2))
 
 # add another joint to 'glue' the link to the chain
 origin = Frame((length, 0, 0), (1, 0, 0), (0, 1, 0))
-robot.add_joint("joint2", Joint.CONTINUOUS, link1, link2, origin, axis)
+model.add_joint("joint2", Joint.CONTINUOUS, link1, link2, origin, axis)
 
-artist = RobotModelArtist(robot)
+artist = RobotModelArtist(model)
+robot = Robot(model, artist=artist)
 
-# Exercise: Update the robot's configuration
+# update the robot's configuration
 configuration = Configuration.from_revolute_values([0.1, 0.2])
-artist.update(configuration)
+robot.update(configuration)
 
-artist.draw_visual()
-artist.redraw()
+robot.draw_visual()
+robot.artist.redraw()
