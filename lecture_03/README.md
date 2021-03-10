@@ -6,7 +6,7 @@ Robot model visualization in Rhino / Grasshopper.
 
 Forward kinematics of open chain manipulators.
 
-👉 Slides
+👉 [Slides](lecture_03.pdf)
 📜 [Assignment 02](assignment_02/README.md)
 
 ## Examples
