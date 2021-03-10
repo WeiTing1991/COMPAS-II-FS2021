@@ -54,9 +54,12 @@ artist.redraw()
 
 ## Helpful links
 
-* [Documentation of `RobotModelArtist`](https://compas.dev/compas/latest/api/generated/compas.geometry.Projection.html?highlight=projection#compas.geometry.Projection)
+* [Documentation of `RobotModelArtist`](https://compas.dev/compas/latest/api/generated/compas_rhino.artists.RobotModelArtist.html)
+* [Robot model tutorial](https://compas.dev/compas/latest/tutorial/robots.html#)
 
 ## Expected result
+
+> NOTE: It should be some recognizable shape, but not necessarily a letter M as in this image!
 
 ![The result](robot_model.jpg)
 

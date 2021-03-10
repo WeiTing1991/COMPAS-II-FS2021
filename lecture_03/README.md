@@ -22,3 +22,14 @@ Forward kinematics of open chain manipulators.
   * [Load from ROS](08_robot_from_ros.py)
   * [Define programmatically](09_define_programmatically.py)
   * [Build your own model](10_build_your_own_robot.py)
+
+* Configuration
+  * [Joint types](11_joint_types.py)
+  * [Construction and merge](12_configuration.py)
+
+* Kinematics
+  * [Forward Kinematics](13_forward_kinematics.py)
+  * [Forward Kinematics in Rhino](14_forward_kinematics_rhino.py)
+  * [Inverse Kinematics](15_inverse_kinematics.py)
+  * [Inverse Kinematics in Rhino](16_inverse_kinematics_rhino.py)
+  * [Inverse Kinematics in Grasshopper](17_ik.ghx)
