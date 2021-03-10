@@ -2,7 +2,7 @@ from compas.robots import RobotModel
 from compas.robots import Joint
 from compas.robots import Link
 
-robot = RobotModel('ur10e',
+model = RobotModel('ur10e',
               joints=[
                   Joint('shoulder_pan_joint', 'revolute', parent='base_link', child='shoulder_link'),
                   Joint('shoulder_lift_joint', 'revolute', parent='shoulder_link', child='upper_arm_link'),
@@ -19,4 +19,4 @@ robot = RobotModel('ur10e',
                   Link('wrist_2_link'),
                   Link('wrist_3_link'),
               ])
-print(robot)
+print(model)

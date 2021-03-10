@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="origins">
+
+ <link name="base_link">
+   <visual>
+     <geometry>
+        <mesh filename="package://basic/cylinder.obj"/>
+     </geometry>
+   </visual>
+ </link>
+
+ <link name="right_leg">
+   <visual>
+     <geometry>
+        <mesh filename="package://basic/box.obj"/>
+     </geometry>
+     <origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+   </visual>
+ </link>
+
+ <joint name="base_to_right_leg" type="fixed">
+   <parent link="base_link"/>
+   <child link="right_leg"/>
+   <origin xyz="0 -0.22 0.25"/>
+ </joint>
+
+</robot>
