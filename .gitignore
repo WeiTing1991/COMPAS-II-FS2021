@@ -106,3 +106,7 @@ ENV/
 
 # Visual Studio Code
 .vscode/
+
+# Rhino lock files
+*.rhl
+*.3dmbak
