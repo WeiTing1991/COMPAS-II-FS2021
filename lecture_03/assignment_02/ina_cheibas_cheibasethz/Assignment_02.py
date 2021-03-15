@@ -77,6 +77,7 @@ for i in range(100):
     artist.draw_visual()
     artist.redraw()
 
+<<<<<<< Updated upstream
 
 # ## Helpful links
 
@@ -127,3 +128,5 @@ for i in range(100):
 #     2. Create the pull request clicking `Compare & pull request` and follow the instructions
 
 #     ![Start a pull request](../../.github/pull-request.png)
+=======
+>>>>>>> Stashed changes
