@@ -117,3 +117,77 @@ def plan_moving_and_placing_motion(robot, element, start_configuration, toleranc
                                                         attached_collision_meshes=[attached_element_mesh]
                                                      ))
     return moving_trajectory, placing_trajectory
+
+
+class _Getch:
+    """Gets a single character from standard input.  Does not echo to the
+screen."""
+    def __init__(self):
+        try:
+            self.impl = _GetchWindows()
+        except ImportError:
+            self.impl = _GetchUnix()
+
+    def __call__(self): return self.impl()
+
+
+class _GetchUnix:
+    def __init__(self):
+        import tty, sys
+
+    def __call__(self):
+        import sys, tty, termios
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        try:
+            tty.setraw(sys.stdin.fileno())
+            ch = sys.stdin.read(1)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        return ch
+
+
+class _GetchWindows:
+    def __init__(self):
+        import msvcrt
+
+    def __call__(self):
+        import msvcrt
+        return msvcrt.getch()
+
+
+getch = _Getch()
+
+CTRL_CHARS = (8, 9, 13, 27)
+__input_context = dict(buffer='')
+
+def get_current_buffer():
+    return __input_context['buffer']
+
+def get_input(prompt='> ', end='\n'):
+    if prompt:
+        print(prompt, end='', flush=True)
+
+    __input_context['buffer'] = ''
+    while True:
+        c = getch()
+        ord_c = ord(c)
+        if ord_c in CTRL_CHARS:
+            if ord_c == 13:
+                # only break if text has content
+                if len(__input_context['buffer']) > 0: break
+            elif ord_c == 8:
+                # only apply backspace if text has content
+                if len(__input_context['buffer']) > 0:
+                    c = c.decode('ascii')
+                    print(c + ' ' + c, end='', flush=True)
+                    __input_context['buffer'] = __input_context['buffer'][:-1]
+        else:
+            c = c.decode('ascii')
+            print(c, end='', flush=True)
+            __input_context['buffer'] += c
+
+    if end:
+        print(end, end='', flush=True)
+
+    return __input_context['buffer']
