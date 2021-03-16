@@ -1,0 +1,18 @@
+version: '2'
+services:
+  moveit_planner:
+    image: gramaziokohler/ros-ur-planner:20.11
+    container_name: moveit_planner
+    environment:
+      - ROS_HOSTNAME=moveit_planner
+      - ROS_MASTER_URI=http://moveit_planner:11311
+      - ROS_LANG_DISABLE=genlisp:gennodejs:geneus
+      - DISPLAY=host.docker.internal:0.0
+    ports:
+      - "9090:9090"
+    command:
+      - roslaunch
+      - /root/catkin_ws/scripts/main.launch
+    #   - gui:=true
+    volumes:
+      - ./scripts:/root/catkin_ws/scripts
