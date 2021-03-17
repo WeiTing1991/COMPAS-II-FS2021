@@ -6,6 +6,8 @@ Basic inter-process communication via ROS nodes. Reproducible ROS environments w
 
 Robot planning: forward and inverse kinematic functions, analytical and numerical solvers. MoveIt integration from the parametric design environment.
 
+👉 [Slides](lecture_04.pdf)
+📜 [Assignment 03](assignment_03/README.md)
 
 ## Examples
 
@@ -29,3 +31,6 @@ Robot planning: forward and inverse kinematic functions, analytical and numerica
   * [Add objects to the scene](13_add_collision_mesh.py)
   * [Append nested objects to the scene](14_append_collision_meshes.py)
   * [Remove objects from the scene](15_remove_collision_mesh.py)
+
+* MoveIt & Grasshopper
+  * [Robot in Grasshopper][16_robot_example.ghx]
