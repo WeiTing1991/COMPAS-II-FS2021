@@ -5,7 +5,7 @@ Using inverse kinematics
 * Setup the MoveIt container for a UR5 on your laptop
 * Use the RosClient to load the robot
 * Take as input a list of brick positions as list of frames and use inverse_kinematics function to calculate viable configurations for each frame
-* Store the results in a JSON file
+* Store the results in a JSON file and commit the file in your submission
 
 ## How to start
 
