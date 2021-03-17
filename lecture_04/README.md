@@ -33,4 +33,4 @@ Robot planning: forward and inverse kinematic functions, analytical and numerica
   * [Remove objects from the scene](15_remove_collision_mesh.py)
 
 * MoveIt & Grasshopper
-  * [Robot in Grasshopper][16_robot_example.ghx]
+  * [Robot in Grasshopper](16_robot_example.ghx)
