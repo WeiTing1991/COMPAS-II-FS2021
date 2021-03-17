@@ -13,7 +13,7 @@ Robot planning: forward and inverse kinematic functions, analytical and numerica
   * [Verify connection](01_check_connection.py)
   * [Interconnected nodes: Talker](02_ros_hello_world_talker.py)
   * [Interconnected nodes: Listener](03_ros_hello_world_listener.py)
-  * [Interconnected nodes across the Internet: Chat](04_chat.py)
+  * [Interconnected nodes across the Internet: Chat](04_ros_chat.py)
 
 * ROS & MoveIt planning with UR5
   * [Forward Kinematics](05_forward_kinematics_ros_loader.py)
