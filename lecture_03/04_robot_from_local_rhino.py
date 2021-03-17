@@ -18,4 +18,5 @@ model.load_geometry(loader)
 # Draw model
 artist = RobotModelArtist(model, layer='COMPAS::Robot Viz')
 artist.clear_layer()
-artist.draw_visual()
+# artist.draw_visual()
+artist.draw_collision()

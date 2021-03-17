@@ -46,7 +46,7 @@ model = RobotModel("robot", links=[], joints=[])
 # Update the model using the artist
 artist = RobotModelArtist(model)
 # artist.update ...
-
+ # fd
 # Render everything
 artist.draw_visual()
 artist.redraw()
