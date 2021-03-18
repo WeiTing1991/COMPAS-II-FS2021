@@ -125,8 +125,10 @@ screen."""
     def __init__(self):
         try:
             self.impl = _GetchWindows()
+            self.ansi_support = False
         except ImportError:
             self.impl = _GetchUnix()
+            self.ansi_support = True
 
     def __call__(self): return self.impl()
 
@@ -141,7 +143,7 @@ class _GetchUnix:
         old_settings = termios.tcgetattr(fd)
         try:
             tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(1)
+            ch = sys.stdin.buffer.read(1)
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
@@ -158,7 +160,7 @@ class _GetchWindows:
 
 getch = _Getch()
 
-CTRL_CHARS = (8, 9, 13, 27)
+CTRL_CHARS = (8, 9, 13, 27, 127)
 __input_context = dict(buffer='')
 
 def get_current_buffer():
@@ -176,11 +178,14 @@ def get_input(prompt='> ', end='\n'):
             if ord_c == 13:
                 # only break if text has content
                 if len(__input_context['buffer']) > 0: break
-            elif ord_c == 8:
+            elif ord_c in (8, 127):
                 # only apply backspace if text has content
                 if len(__input_context['buffer']) > 0:
-                    c = c.decode('ascii')
-                    print(c + ' ' + c, end='', flush=True)
+                    if getch.ansi_support:
+                        print('\033[1D \033[1D', end='', flush=True)
+                    else:
+                        c = c.decode('ascii')
+                        print(c + ' ' + c, end='', flush=True)
                     __input_context['buffer'] = __input_context['buffer'][:-1]
         else:
             c = c.decode('ascii')

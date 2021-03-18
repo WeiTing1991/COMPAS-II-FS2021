@@ -30,11 +30,11 @@ def start_chat():
 def receive_message(message):
     data = json.loads(message['data'])
     if data['name'] != name:
-        print('\r[{}]: {}\n> {}'.format(
+        print('\r[{}]: {}\r'.format(
             data['name'],
             data['text'].ljust(80),
-            get_current_buffer()
-        ), end='', flush=True)
+        ))
+        print('> {}'.format(get_current_buffer()), end='', flush=True)
 
 def send_message(talker, message):
     talker.publish({'data': json.dumps(dict(text=message, name=name))})
