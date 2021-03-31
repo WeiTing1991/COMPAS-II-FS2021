@@ -15,7 +15,7 @@ Method for Pick and Place planning.
 
 Make sure you start (`compose up`) the container with a UR5 planner for these examples. You can use
 either [the one with browser-based UI](../docker/moveit/docker-compose.yml) or
-the [lightweight version of it without UI]((../docker/ur5-planner/docker-compose.yml)).
+the [lightweight version of it without UI](../docker/ur5-planner/docker-compose.yml).
 
 * Path planning with MoveIt
   * [Cartesian motion planning](01_plan_cartesian_motion_ros_loader.py)
