@@ -1,15 +1,18 @@
 # Assignment 04
 
+* Continuation from hands-on exercise
+* Based on the work done during lecture on the example `15_pick_and_place.ghx` explore different sequences of place frames
+* Store all the trajectories (pick+move+place) for at least 8 elements in a JSON file, use `compas.json_dump` to keep data type information
+
+More about serialization: https://compas.dev/compas/latest/tutorial/serialization.html 
 
 ## How to start
 
-Use the following code as a starting point for your assignment:
-
-```python
-```
+Use the example file `15_pick_and_place.ghx` as starting point.
 
 ## Expected result
 
+![Path plan](path-plan.png)
 
 ## How to submit your assignment
 
@@ -25,8 +28,7 @@ Use the following code as a starting point for your assignment:
        (compas-fs2021) git push -u assignments assignment-04
 
 4. Create a folder with your name and last name, eg. `elvis_presley` (make sure it is inside the current assignment folder)
-5. Create a Python file named `assignment_04.py` and paste the starting point code.
-6. For visual inspection, **copy** the file `solution_viewer.ghx` in the same folder of your `assignment_04.py`.
+5. Copy example `15_pick_and_place.ghx` and paste it into your folder.
 6. Solve the coding assignment and commit
     <details><summary><small>(How do I commit?)</small></summary>
     <p>
