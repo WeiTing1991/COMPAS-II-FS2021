@@ -6,7 +6,7 @@ Planning scene operations.
 
 End effectors.
 
-Pick and Place processes with discrete building elements.
+Method for Pick and Place planning.
 
 👉 [Slides](lecture_05.pdf)
 📜 [Assignment 04](assignment_04/README.md)
@@ -30,9 +30,9 @@ the [lightweight version of it without UI]((..\docker\ur5-planner\docker-compose
   * [Remove objects from the scene](09_remove_collision_mesh.py)
 
 * Pick and place process
-  * [Attach tool][10_attach_tool.py]
-  * [Detach tool][11_detach_tool.py]
-  * [Plan cartesian motion with tool][12_plan_cartesian_motion_with_attached_tool.py]
+  * [Attach tool](10_attach_tool.py)
+  * [Detach tool](11_detach_tool.py)
+  * [Plan cartesian motion with tool](12_plan_cartesian_motion_with_attached_tool.py)
 
-* MoveIt & Grasshopper
-  * [Planning playground](16_robot_example.ghx)
+* Hands-on exercise
+  * [Pick and Place planning](15_pick_and_place.ghx)

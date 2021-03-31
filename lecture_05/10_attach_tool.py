@@ -14,15 +14,13 @@ HERE = os.path.dirname(__file__)
 mesh = Mesh.from_stl(os.path.join(HERE, 'vacuum_gripper.stl'))
 frame = Frame([0.07, 0, 0], [0, 0, 1], [0, 1, 0])
 tool = Tool(mesh, frame)
-tool.to_json(os.path.join(HERE, 'vacuum_gripper.json'))
-
 
 with RosClient('localhost') as client:
     robot = client.load_robot()
     scene = PlanningScene(robot)
-    robot.attach_tool(tool)
 
-    # add attached tool to planning scene
+    # Attach the tool
+    robot.attach_tool(tool)
     scene.add_attached_tool()
 
     # now we can convert frames at robot's tool tip and flange

@@ -1,13 +1,18 @@
 import os
-from compas.geometry import Frame
+
 from compas_fab.backends import RosClient
 from compas_fab.robots import Configuration
 from compas_fab.robots import Tool
 
-# create tool from json
+from compas.datastructures import Mesh
+from compas.geometry import Frame
+
 HERE = os.path.dirname(__file__)
-filepath = os.path.join(HERE, 'vacuum_gripper.json')
-tool = Tool.from_json(filepath)
+
+# create tool from mesh and frame
+mesh = Mesh.from_stl(os.path.join(HERE, 'vacuum_gripper.stl'))
+frame = Frame([0.07, 0, 0], [0, 0, 1], [0, 1, 0])
+tool = Tool(mesh, frame)
 
 element_height = 0.014
 approach_distance = 0.05
