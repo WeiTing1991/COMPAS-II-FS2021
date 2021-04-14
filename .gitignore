@@ -114,3 +114,5 @@ ENV/
 
 # macos stuff
 .DS_Store
+
+lecture_06/assembly.json
