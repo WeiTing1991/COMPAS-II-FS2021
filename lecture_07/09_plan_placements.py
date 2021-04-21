@@ -7,7 +7,6 @@ from compas_fab.robots import PlanningScene
 
 import compas
 from compas.geometry import Translation
-from compas.topology import breadth_first_ordering
 
 HERE = os.path.dirname(__file__)
 MAX_STEP = 0.01
@@ -24,9 +23,8 @@ with RosClient() as client:
     helpers.attach_vacuum_gripper(scene)
     helpers.add_static_objects(scene)
 
-    # Traverse the network
-    root = assembly.leaves()[0]
-    assembly_sequence = breadth_first_ordering(assembly.adjacency, root)
+    # Get sequence
+    assembly_sequence = helpers.traversal_linearly_ordered(assembly)
     print('Sequence: {}'.format(assembly_sequence))
 
     built = []

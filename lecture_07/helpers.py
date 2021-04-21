@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import os
 
 from compas_fab.robots import AttachedCollisionMesh
@@ -7,9 +9,38 @@ from compas_fab.robots import Tool
 import compas
 from compas.datastructures import Mesh
 from compas.geometry import Frame
+from compas.topology import breadth_first_ordering
+from compas.topology import breadth_first_traverse
 
 HERE = os.path.dirname(__file__)
 Z_OFFSET = 0.070
+
+
+def traversal_linearly_ordered(assembly):
+    return sorted(assembly.nodes())
+
+
+def traversal_breadth_first_ordering(assembly):
+    root = assembly.leaves()[0]
+    return breadth_first_ordering(assembly.adjacency, root)
+
+
+def traversal_buildup_sequence(assembly):
+    visited = set()
+    elements = []
+    for key in assembly.nodes():
+        if assembly.degree_out(key) == 0:
+            get_dependencies(assembly, key, elements, visited)
+
+    return list(reversed(elements))
+
+
+def get_dependencies(assembly, key, elements, visited):
+    if key not in visited:
+        elements.append(key)
+        visited.add(key)
+    for n in assembly.neighbors_in(key):
+        get_dependencies(assembly, n, elements, visited)
 
 
 def get_last_config(trajectory, robot):
