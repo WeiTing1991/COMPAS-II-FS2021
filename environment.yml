@@ -7,9 +7,8 @@ dependencies:
    - pip
    - git
    - compas=1.*
-   - compas_fab>=0.17
+   - compas_fab>=0.17.1
    - igl>=2.2.1
    - compas_cgal>=0.1.1
-   - pip:
-     # - compas_rrc @ git+https://github.com/compas-rrc/compas_rrc.git#egg=compas_rrc
-     - compas_slicer
+   - compas_rrc
+   - compas_slicer
