@@ -13,24 +13,56 @@ if __name__ == '__main__':
     abb = rrc.AbbClient(ros, '/rob1')
     print('Connected.')
 
+    # Reset signals
+    abb.send(rrc.SetDigital('doNewBrick',0))
+    abb.send(rrc.SetDigital('doVacuumOn',0))
+
     # Set tool
     abb.send(rrc.SetTool('t_RRC_Vacuum_Gripper'))
 
+    # Set work object
+    abb.send(rrc.SetWorkObject('ob_RRC_Brick_Pallet'))
+
+    # Create a new brick
+    done = abb.send_and_wait(rrc.PulseDigital('doNewBrick',0.2))
+
     # Define pick positions
-    frame_on_pick = Frame(Point(50, 50, 50), Vector(0, -1, 0), Vector(-1, 0, 0))
-    frame_on_place = Frame(Point(50, 50, 50), Vector(0, -1, 0), Vector(-1, 0, 0))
+    pre_pick_position = Frame(Point(68.5, 48.5, 50), Vector(0, -1, 0), Vector(-1, 0, 0))
+    pick_position = Frame(Point(68.5, 48.5, 36), Vector(0, -1, 0), Vector(-1, 0, 0))
 
     # Define speeds
     speed = 100
 
-    # Move to frame on pickup pallet (work object)
-    abb.send(rrc.SetWorkObject('ob_RRC_Brick_Pallet'))
-    abb.send_and_wait(rrc.MoveToFrame(frame_on_pick, speed, rrc.Zone.FINE))
+    # Move over pick postion
+    abb.send(rrc.MoveToFrame(pre_pick_position, speed, rrc.Zone.Z10))
 
+    # Move to pick postion
+    abb.send(rrc.MoveToFrame(pick_position, speed, rrc.Zone.FINE))
 
-    # Move to frame on place (work object)
+    # Vacuum on
+    abb.send(rrc.SetDigital('doVacuumOn',1))
+
+    # Move over pick postion
+    abb.send(rrc.MoveToFrame(pre_pick_position, speed, rrc.Zone.Z10))
+
+    # Set work object
     abb.send(rrc.SetWorkObject('ob_RRC_Build_Space'))
-    abb.send_and_wait(rrc.MoveToFrame(frame_on_place, speed, rrc.Zone.FINE))
+
+    # Define pick positions
+    pre_place_position = Frame(Point(150, 50, 50), Vector(0, -1, 0), Vector(-1, 0, 0))
+    place_position = Frame(Point(150, 50, 12), Vector(0, -1, 0), Vector(-1, 0, 0))
+
+    # Move over place postion
+    abb.send(rrc.MoveToFrame(pre_place_position, speed, rrc.Zone.Z10))
+
+    # Move to place postion
+    abb.send(rrc.MoveToFrame(place_position, speed, rrc.Zone.FINE))
+
+    # Vacuum off
+    abb.send(rrc.SetDigital('doVacuumOn',0))
+
+    # Move over place postion
+    abb.send(rrc.MoveToFrame(pre_place_position, speed, rrc.Zone.Z10))
 
     # End of Code
     print('Finished')

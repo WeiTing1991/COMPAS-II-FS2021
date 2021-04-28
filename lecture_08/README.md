@@ -20,25 +20,27 @@ Before running this examples, you have to:
 2. Install [SCARA RRC IRB910SC robot station](https://github.com/compas-rrc/compas_rrc_start/blob/main/robotstudio-stations/COMPAS_RRC_IRB-910SC-3_0.65.rspag) (`Pack&Go .rspag` files are installed simply by opening them from RobotStudio).
 3. Start (`compose up`) the [RRC driver container](../docker/rrc_virtual_controller/docker-compose.yml)
 
-* Basics
+* Communication
   * [Hello World](01_hello_world.py)
   * [Send instruction](02_send.py)
   * [Send instruction with feedback (blocking)](03_send_and_wait.py)
   * [Send instruction with deferred feedback (non-blocking)](04_send_and_wait_in_the_future.py)
+
+* Basic setup
   * [Set tool](05_set_tool.py)
   * [Set work object](06_set_work_object.py)
+  * [Set acceleration](07_set_acceleration.py)
+  * [Set max speed](08_set_max_speed.py)
 
 * Motion instructions
-  * [Get/Move to frame](07_get_and_move_to_frames.py)
-  * [Get/Move to joints (Configuration)](08_get_and_move_to_joints.py)
-  * [Get/Move to Robtarget](09_get_and_move_to_robtarget.py)
-  * [Move to home configuration](10_move_to_home.py)
+  * [Get/Move to frame](09_get_and_move_to_frames.py)
+  * [Get/Move to joints (Configuration)](10_get_and_move_to_joints.py)
+  * [Get/Move to Robtarget](11_get_and_move_to_robtarget.py)
+  * [Move to home configuration](12_move_to_home.py)
 
 * Utilities
-  * [No-op/ping](11_no-op.py)
-  * [Print Text on flex pendant](12_print_text.py)
-  * [Set acceleration](13_set_acceleration.py)
-  * [Set max speed](14_set_max_speed.py)
+  * [No-op/ping](13_no-op.py)
+  * [Print Text on flex pendant](14_print_text.py)
   * [Wait time](15_wait_time.py)
   * [Stop/Pause program](16_stop.py)
   * [Stopwatch on the robot](17_watch.py)
