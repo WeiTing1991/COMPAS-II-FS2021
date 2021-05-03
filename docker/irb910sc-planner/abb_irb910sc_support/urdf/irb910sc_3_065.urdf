@@ -66,7 +66,6 @@
   <joint name="base_link-base" type="fixed">
     <parent link="base_link" />
     <child link="base" />
-    <axis xyz="0.0 0.0 1.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
   </joint>
   <joint name="joint1" type="revolute">
@@ -87,7 +86,7 @@
     <parent link="link2" />
     <child link="link3" />
     <axis xyz="0.0 0.0 1.0" />
-    <limit effort="0.0" lower="-0.18" velocity="0.0" />
+    <limit effort="0.0" lower="-0.18" upper="0.0" velocity="0.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.25 0.0 0.18" />
   </joint>
   <joint name="joint4" type="revolute">
@@ -97,16 +96,14 @@
     <limit effort="0.0" lower="-6.98132" upper="6.98132" velocity="0.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 -0.2202" />
   </joint>
-  <joint name="flange" type="fixed">
+  <joint name="link_4-flange" type="fixed">
     <parent link="link4" />
     <child link="flange" />
-    <axis xyz="0.0 0.0 1.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
   </joint>
-  <joint name="link_6-tool0" type="fixed">
+  <joint name="flange-tool0" type="fixed">
     <parent link="flange" />
     <child link="tool0" />
-    <axis xyz="0.0 0.0 1.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
   </joint>
 </robot>
