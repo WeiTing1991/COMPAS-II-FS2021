@@ -37,6 +37,7 @@
       </geometry>
     </collision>
   </link>
+  <link name="flange" />
   <link name="link3">
     <visual>
       <geometry>
@@ -49,6 +50,7 @@
       </geometry>
     </collision>
   </link>
+  <link name="tool0" />
   <link name="link4">
     <visual>
       <geometry>
@@ -94,5 +96,17 @@
     <axis xyz="0.0 0.0 1.0" />
     <limit effort="0.0" lower="-6.98132" upper="6.98132" velocity="0.0" />
     <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 -0.2202" />
+  </joint>
+  <joint name="flange" type="fixed">
+    <parent link="link4" />
+    <child link="flange" />
+    <axis xyz="0.0 0.0 1.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint>
+  <joint name="link_6-tool0" type="fixed">
+    <parent link="flange" />
+    <child link="tool0" />
+    <axis xyz="0.0 0.0 1.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
   </joint>
 </robot>

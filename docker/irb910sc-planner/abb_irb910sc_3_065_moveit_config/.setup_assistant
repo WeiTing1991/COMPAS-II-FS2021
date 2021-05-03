@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb910sc_support
+    relative_path: urdf/irb910sc_3_065.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/irb910.srdf
+  CONFIG:
+    author_name: Gonzalo Casas
+    author_email: casas@arch.ethz.ch
+    generated_timestamp: 1620021837
