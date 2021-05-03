@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+        <package format="2">
+          <name>abb_irb910sc_support</name>
+          <version>0.1.0</version>
+          <description>TBA</description>
+          <author>John Doe</author>
+          <maintainer email="john.doe@example.org">John Doe</maintainer>
+          <license>Apache2</license>
+        
+          <url type="website">https://github.con/your_org/abb_irb910sc_support</url>
+          <url type="bugtracker">https://github.con/your_org/abb_irb910sc_support/issues</url>
+          <url type="repository">https://github.con/your_org/abb_irb910sc_support</url>
+        
+          <buildtool_depend>catkin</buildtool_depend>
+        
+          <test_depend>roslaunch</test_depend>
+        
+          <exec_depend>joint_state_publisher</exec_depend>
+          <exec_depend>robot_state_publisher</exec_depend>
+          <exec_depend>rviz</exec_depend>
+          <exec_depend>xacro</exec_depend>
+        
+          <export>
+            <architecture_independent/>
+          </export>
+        </package>
