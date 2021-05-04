@@ -1,0 +1,41 @@
+<launch>
+  <arg name="rrc" default="true" />
+  <arg name="gui" default="false" />
+  <arg name="debug" default="false" />
+  <arg name="robot_ip" default="127.0.0.1" />
+  <arg name="namespace" default="rob1" />
+
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="unregister_timeout" value="28800" />
+  </include>
+  <include file="$(find file_server)/launch/file_server.launch" />
+
+  <include file="$(find abb_irb910sc_3_065_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <include file="$(find abb_irb910sc_3_065_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="true"/>
+    <arg name="info" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find abb_irb910sc_3_065_moveit_config)/launch/moveit_rviz.launch" if="$(arg gui)">
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <include file="$(find compas_rrc_driver)/launch/bringup.launch" if="$(arg rrc)">
+    <arg name="robot_ip" value="$(arg robot_ip)"/>
+    <arg name="robot_streaming_port" value="30101"/>
+    <arg name="robot_state_port" value="30201"/>
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+</launch>
