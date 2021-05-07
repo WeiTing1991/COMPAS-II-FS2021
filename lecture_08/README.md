@@ -11,6 +11,7 @@ Instructions.
 Multi controller & location coordination.
 
 👉 [Slides](lecture_08.pdf)
+📜 [Quiz assignment](https://docs.google.com/forms/d/e/1FAIpQLSdQyY5szX5hCuC3Qulfek_bs1NseAJWr-tH5lUXhBk4zdGjMg/viewform?usp=sf_link)
 
 ## Examples
 
