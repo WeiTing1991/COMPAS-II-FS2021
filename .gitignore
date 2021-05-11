@@ -116,3 +116,5 @@ ENV/
 .DS_Store
 
 lecture_06/assembly.json
+
+output/
