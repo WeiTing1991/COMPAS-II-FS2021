@@ -430,7 +430,7 @@ class ROSTopicSubscribe(component):
         self.is_subscribed = False
         self.msg_key = create_id(self, 'last_msg')
         key = create_id(self, 'topic')
-        
+
         topic = st.get(key, None)
         last_msg = st.get(self.msg_key, None)
 
@@ -439,7 +439,7 @@ class ROSTopicSubscribe(component):
                 if topic and topic.is_subscribed:
                     topic.unsubscribe()
                     time.sleep(0.2)
-    
+
                 topic = Topic(ros_client, topic_name, topic_type)
                 topic.subscribe(self.topic_callback)
                 st[key] = topic
@@ -1933,7 +1933,7 @@ if robot:
     if attach:
         vmesh = Mesh.from_stl(os.path.join(HERE, 'vacuum-gripper-visual.stl'))
         cmesh = Mesh.from_stl(os.path.join(HERE, 'vacuum-gripper-collision.stl'))
-        frame = Frame([0, 0, -0.04328], [0, 0, 1], [0, 1, 0])
+        frame = Frame([0, 0, -0.04328], [1, 0, 0], [0, 1, 0])
         tool = Tool(visual=vmesh, frame_in_tool0_frame=frame, collision=cmesh)
         robot.attach_tool(tool)
     if detach:
