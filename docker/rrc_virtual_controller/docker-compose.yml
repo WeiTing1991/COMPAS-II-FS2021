@@ -1,0 +1,47 @@
+version: '3'
+services:
+  ros-master:
+    image: compasrrc/compas_rrc_driver:v1.1.0
+    container_name: ros-master
+    environment:
+      -  ROS_HOSTNAME=ros-master
+      - ROS_MASTER_URI=http://ros-master:11311
+    ports:
+      - "11311:11311"
+    command:
+      - roscore
+
+  ros-bridge:
+    image: compasrrc/compas_rrc_driver:v1.1.0
+    container_name: ros-bridge
+    environment:
+      - ROS_HOSTNAME=ros-bridge
+      - ROS_MASTER_URI=http://ros-master:11311
+    ports:
+      - "9090:9090"
+    depends_on:
+      - ros-master
+    command:
+      - roslaunch
+      - --wait
+      - rosbridge_server
+      - rosbridge_websocket.launch
+      - unregister_timeout:=28800      # This horribly long timeout of 8 hours is to workaround this issue: https://github.com/RobotWebTools/rosbridge_suite/issues/138
+
+  abb-driver:
+    image: compasrrc/compas_rrc_driver:v1.1.0
+    container_name: abb-driver
+    environment:
+      - ROS_HOSTNAME=abb-driver
+      - ROS_MASTER_URI=http://ros-master:11311
+    depends_on:
+      - ros-master
+    command:
+      - roslaunch
+      - --wait
+      - compas_rrc_driver
+      - bringup.launch
+      - robot_ip:=host.docker.internal
+      - robot_streaming_port:=30101
+      - robot_state_port:=30201
+      - namespace:=rob1

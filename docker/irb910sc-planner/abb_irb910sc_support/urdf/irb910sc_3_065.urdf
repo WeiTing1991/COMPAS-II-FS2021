@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="irb910">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/base_link.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="base" />
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link2.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link1.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="flange" />
+  <link name="link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link3.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="tool0" />
+  <link name="link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link4.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb910sc_support/meshes/irb910sc_3_065/visual/link4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link-base" type="fixed">
+    <parent link="base_link" />
+    <child link="base" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint>
+  <joint name="joint1" type="revolute">
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="0.0" lower="-2.44346" upper="2.44346" velocity="0.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.1962" />
+  </joint>
+  <joint name="joint2" type="revolute">
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="0.0" lower="-2.61799" upper="2.61799" velocity="0.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.4 0.0 0.0615" />
+  </joint>
+  <joint name="joint3" type="prismatic">
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="0.0" lower="-0.18" upper="0.0" velocity="0.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.25 0.0 0.18" />
+  </joint>
+  <joint name="joint4" type="revolute">
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="0.0" lower="-6.98132" upper="6.98132" velocity="0.0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 -0.2202" />
+  </joint>
+  <joint name="link_4-flange" type="fixed">
+    <parent link="link4" />
+    <child link="flange" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint>
+  <joint name="flange-tool0" type="fixed">
+    <parent link="flange" />
+    <child link="tool0" />
+    <origin rpy="0.0 -0.0 0.0" xyz="0.0 0.0 0.0" />
+  </joint>
+</robot>
