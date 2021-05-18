@@ -7,3 +7,4 @@ Simple planar slicing.
 Scalar field slicing.
 
 👉 [Slides](lecture_10.pdf)
+📜 [Assignment 06](assignment_06/README.md)
