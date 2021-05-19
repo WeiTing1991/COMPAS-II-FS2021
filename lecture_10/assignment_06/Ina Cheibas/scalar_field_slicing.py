@@ -22,7 +22,7 @@ if __name__ == '__main__':
     mesh = Mesh.from_obj(os.path.join(DATA_PATH, MODEL))
 
     # Create scalar field
-    plane = Plane(Point(-10, 0, 40), Vector(0.5, 0.5, 0))
+    plane = Plane(Point(0, -30, 40), Vector(0, 0.5, 0.5))
     v_coords = []
     for v_key in mesh.vertices():
         v_coord = mesh.vertex_coordinates(v_key, axes='xyz')
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         u.append(d)
 
     # generate contours of scalar field
-    slicer = ScalarFieldSlicer(mesh, u, no_of_isocurves=20)
+    slicer = ScalarFieldSlicer(mesh, u, no_of_isocurves=46)
     slicer.slice_model()
     slicer_utils.save_to_json(slicer.to_data(), OUTPUT_PATH, 'isocontours.json')
     simplify_paths_rdp(slicer, threshold=0.8)
